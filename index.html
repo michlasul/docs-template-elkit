@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation Website</title>
+    <style>
+      /* Color variables */
+      :root {
+        --primary-color: #9f77f7;
+        --secondary-color: #ffffff;
+        --heading-color: #ffffff;
+        --body-text-color: #9a97a3;
+        --border-color: #242329;
+        --main-background-color: #0f0e11;
+        --variant-background-color: #1d1c20;
+      }
+
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Inter, sans-serif;
+        color: var(--body-text-color);
+        line-height: 1.6;
+        background-color: var(--main-background-color);
+      }
+
+      /* Layout */
+      .container {
+        display: flex;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      /* Sidebar styles */
+      .sidebar {
+        width: 250px;
+        padding: 20px;
+        height: 100vh;
+        position: fixed;
+        overflow-y: auto;
+        border-right: 1px solid var(--border-color);
+      }
+
+      .sidebar h2 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+      }
+
+      .sidebar li {
+        margin-bottom: 10px;
+      }
+
+      .sidebar a {
+        color: var(--body-text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .sidebar a:hover,
+      .sidebar a.active {
+        color: var(--secondary-color);
+      }
+
+      /* Content styles */
+      .content {
+        flex-grow: 1;
+        padding: 30px;
+        margin-left: 250px;
+      }
+
+      .content ul {
+        padding-left: 20px;
+        list-style-type: decimal;
+      }
+
+      .content li {
+        color: var(--heading-color);
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      .content ul li p {
+        color: var(--body-text-color);
+      }
+
+      .container-alphabet {
+        padding-left: 20px;
+      }
+
+      .container-alphabet li {
+        margin-bottom: 0px;
+      }
+
+      .container-alphabet li .p {
+        color: var(--body-text-color);
+        font-weight: 500;
+      }
+
+      .container-alphabet li span {
+        color: var(--heading-color);
+        font-weight: 600;
+      }
+
+      .important {
+        background-color: var(--variant-background-color);
+        padding: 16px;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+      .important p span {
+        color: var(--heading-color);
+        font-weight: 700;
+      }
+      .important p {
+        margin-bottom: 0;
+        color: var(--body-text-color);
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--heading-color);
+        margin-bottom: 15px;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      /* Mobile styles */
+      .mobile-header {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .mobile-header .logo {
+        color: white;
+        font-size: 1.5em;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 20px;
+        height: 2px;
+        background-color: white;
+        margin: 2px 0;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .sidebar {
+          width: 100%;
+          height: auto;
+          position: fixed;
+          top: 60px;
+          left: -100%;
+          transition: left 0.3s ease;
+          background-color: #d6d6d6;
+        }
+
+        .sidebar.active {
+          left: 0;
+        }
+
+        .content {
+          margin-left: 0;
+          margin-top: 60px;
+        }
+
+        .mobile-header {
+          display: flex;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mobile header -->
+    <header class="mobile-header">
+      <div class="logo">Documentation</div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2>Documentation</h2>
+        <ul>
+          <li><a href="#section1" class="active">Welcome</a></li>
+          <li><a href="#section2">How to Import</a></li>
+          <li><a href="#section3">Customize the Font and Color</a></li>
+          <li><a href="#section4">Section 4</a></li>
+        </ul>
+      </aside>
+
+      <!-- Main content -->
+      <main class="content">
+        <section id="section1">
+          <h1>Welcome</h1>
+          <p>
+            We're excited to have you join the Furnice family! Your purchase means a lot to us, and we can't wait to see how you use it to create stunning websites. To help you get started, we've included a step by step how can you import
+            your template into your existing website, that might be helpful.
+          </p>
+          <div class="important">
+            <p><span>Important!</span> Elementor recommends backing up your site before importing a kit file.</p>
+          </div>
+        </section>
+        <section id="section2">
+          <h2>How to Import</h2>
+          <ul>
+            <li>
+              <span>Extract Package</span>
+              <p>Once you extract the purchased package, you'll find three files: the Main File, this Documentation, and Screenshots of each page in the template.</p>
+            </li>
+            <li>Go to your WP Admin</li>
+            <div>
+              <img src="./Assets/go-to-tools.webp" alt="Tools" height="500" />
+              <li>Select Elementor > Tools</li>
+            </div>
+            <div>
+              <img src="./Assets/import-export-kit.webp" alt="Export/Import Kit" width="500" />
+              <li>In the right panel, click the Import/Export Kit tab</li>
+            </div>
+            <div>
+              <img src="./Assets/start-export.webp" alt="Start Export" width="500" />
+              <li>Click Start Import</li>
+            </div>
+            <div>
+              <img src="./Assets/upload-file.webp" alt="Upload File" width="500" />
+              <li>
+                Drag and drop the exported zip file into the window or click Select File and navigate to the zip file. You may receive a warning about importing zip files. If you created the zip file or trust the source of the zip file,
+                continue with the import.
+              </li>
+            </div>
+            <li>Click Next</li>
+            <li>
+              Select which parts of the kit you want to import
+              <div class="container-alphabet">
+                <ol type="a">
+                  <li>
+                    <span>Templates:</span>
+                    <span class="p">imports site parts such as headers and footers plus any template you saved. Only select this if you want to recreate the site elements with different content.</span>
+                  </li>
+                  <li>
+                    <span>Content:</span>
+                    <span class="p">Imports the pages, posts, and custom post types. It is good for importing the text and images in the kit. </span>
+                  </li>
+                  <li>
+                    <span>Site Settings:</span>
+                    <span class="p">Import the global fonts, theme style, layout, lightbox, and background settings. Only select this if you want to replicate the look and feel of the site.</span>
+                  </li>
+                </ol>
+                <div class="important">Tip: If you want to import the entire site as is, select all three.</div>
+              </div>
+            </li>
+            <div>
+              <img src="./Assets/select-plugin.webp" alt="Select Plugins" width="500" />
+              <li>
+                <span>Click Import</span>
+                <p>You may receive a warning that the kit contains SVG files. If you created the export kit or trust the source of the export kit, Enable SVG imports.</p>
+              </li>
+            </div>
+            <li>Click Close to end the import process</li>
+          </ul>
+        </section>
+        <section id="section3">
+          <h2>Customize the Font and Color</h2>
+          <ul>
+            <div>
+              <img src="./Assets/edit-with-elementor.webp" alt="Edit With Elementor" width="500" />
+              <li>Open one of the Imported page with Edit with Elementor option</li>
+            </div>
+          </ul>
+        </section>
+        <section id="section4">
+          <h2>Section 4</h2>
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      // Get DOM elements
+      const hamburger = document.querySelector(".hamburger");
+      const sidebar = document.querySelector(".sidebar");
+      const content = document.querySelector(".content");
+      const menuItems = document.querySelectorAll(".sidebar a");
+
+      // Toggle sidebar on hamburger click
+      hamburger.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+      });
+
+      // Close sidebar when clicking outside
+      content.addEventListener("click", () => {
+        if (sidebar.classList.contains("active")) {
+          sidebar.classList.remove("active");
+        }
+      });
+
+      // Handle menu item clicks
+      menuItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+          // Remove active class from all items
+          menuItems.forEach((i) => i.classList.remove("active"));
+          // Add active class to clicked item
+          e.target.classList.add("active");
+
+          // Close sidebar on mobile after clicking a menu item
+          if (window.innerWidth <= 768) {
+            sidebar.classList.remove("active");
+          }
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
