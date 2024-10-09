@@ -33,24 +33,18 @@
       /* Layout */
       .container {
         display: flex;
-        max-width: 1280px;
+        max-width: 1140px;
         margin: 0 auto;
       }
 
       /* Sidebar styles */
       .sidebar {
-        width: 250px;
+        flex-grow: 1;
         padding: 20px;
         height: 100vh;
         position: fixed;
         overflow-y: auto;
         border-right: 1px solid var(--border-color);
-      }
-
-      .sidebar-right {
-        width: 800px;
-        padding: 20px;
-        height: 100vh;
       }
 
       .sidebar h2 {
@@ -79,9 +73,10 @@
 
       /* Content styles */
       .content {
-        flex-grow: 1;
+        flex-grow: 2;
         padding: 30px;
         margin-left: 250px;
+        margin-right: 250px;
       }
 
       .content ul {
@@ -92,7 +87,7 @@
       .content li {
         color: var(--heading-color);
         font-weight: 500;
-        font-size: 16px;
+        font-size: 1rem;
         margin-bottom: 15px;
       }
 
@@ -120,7 +115,7 @@
 
       .important {
         background-color: var(--variant-background-color);
-        padding: 16px;
+        padding: 1rem;
         border-radius: 4px;
         margin-bottom: 15px;
       }
@@ -142,7 +137,7 @@
 
       p {
         margin-bottom: 15px;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
       }
 
@@ -152,7 +147,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        background-color: var(--primary-color);
+        background-color: var(--variant-background-color);
         position: fixed;
         width: 100%;
         top: 0;
@@ -193,13 +188,16 @@
           background-color: #d6d6d6;
         }
 
+        .content img {
+          width: 100%;
+        }
+
         .sidebar.active {
           left: 0;
         }
 
         .content {
-          margin-left: 0;
-          margin-top: 60px;
+          margin: 60px 0px 30px 0px;
         }
 
         .mobile-header {
@@ -331,8 +329,6 @@
           </ul>
         </section>
       </main>
-
-      <div class="sidebar-right"></div>
     </div>
 
     <script>
