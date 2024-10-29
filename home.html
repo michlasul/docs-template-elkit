@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -8,12 +8,15 @@
     <!-- Bootstrap CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
 
+    <!-- Deverust CSS -->
+    <link rel="stylesheet" href="./css/deverust-utilities.css" />
+
     <title>Hello, world!</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Fazanash <span class="badge rounded-pill text-bg-primary fw-medium">Documentation</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,44 +41,72 @@
 
     <section>
       <div class="container py-3">
-        <div class="row">
+        <div class="d-flex">
           <div class="col-3">
-            <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
-              <nav class="nav nav-pills flex-column">
-                <a class="nav-link" href="#item-1">Item 1</a>
+            <div class="sticky-sm-top pt-4">
+              <nav id="navbar-example3" class="flex-column align-items-stretch pe-4 border-end">
                 <nav class="nav nav-pills flex-column">
-                  <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1</a>
-                  <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2</a>
-                </nav>
-                <a class="nav-link" href="#item-2">Item 2</a>
-                <a class="nav-link" href="#item-3">Item 3</a>
-                <nav class="nav nav-pills flex-column">
-                  <a class="nav-link ms-3 my-1" href="#item-3-1">Item 3-1</a>
-                  <a class="nav-link ms-3 my-1" href="#item-3-2">Item 3-2</a>
+                  <div class="d-flex flex-row align-self-start align-items-center gap-2 p-2 rounded bg-light-subtle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill text-warning" viewBox="0 0 16 16">
+                      <path
+                        d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"
+                      />
+                    </svg>
+                    <h6 class="fw-700 m-0">Getting Started</h6>
+                  </div>
+                  <nav class="nav nav-pills flex-column gap-2 py-2">
+                    <a class="nav-link ddt-ps-space-8 py-0 text-light fw-light fw-medium-hover" href="#wordpress-specification">WordPress Specification</a>
+                    <a class="nav-link ddt-ps-space-8 py-0 text-light fw-light fw-medium-hover" href="#server-configuration">Server Configuration</a>
+                    <a class="nav-link ddt-ps-space-8 py-0 text-light fw-light fw-medium-hover" href="#plugin-installation">Plugins Installation</a>
+                  </nav>
+                  <a class="nav-link text-light" href="#item-2">Item 2</a>
+                  <a class="nav-link text-light" href="#item-3">Item 3</a>
+                  <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1 text-light" href="#item-3-1">Item 3-1</a>
+                    <a class="nav-link ms-3 my-1 text-light" href="#item-3-2">Item 3-2</a>
+                  </nav>
                 </nav>
               </nav>
-            </nav>
+            </div>
           </div>
 
-          <main class="col-7">
-            <div class="w-full bg-dark p-4 rounded mb-4">
-              <div class="d-flex flex-column text-white">
-                <h1>Documentation</h1>
-                <p>
-                  We're excited to have you join the Furnice family! Your purchase means a lot to us, and we can't wait to see how you use it to create stunning websites. To help you get started, we've included a step by step how can you
-                  import your template into your existing website, that might be helpful.
-                </p>
-              </div>
+          <main class="col-7 px-4">
+            <!-- Callout -->
+            <div class="alert alert-warning mt-4" role="alert">
+              <h4 class="alert-heading">Well done!</h4>
+              <p>
+                We're excited to have you join the Furnice family! Your purchase means a lot to us, and we can't wait to see how you use it to create stunning websites. To help you get started, we've included a step by step how can you
+                import your template into your existing website, that might be helpful.
+              </p>
+              <hr />
+              <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
             </div>
+            <!-- Contents -->
             <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+              <!-- Getting Started Section -->
+              <ol class="ps-0">
+                <p class="fs-5">Once you extract the purchased package, you'll find three files: the Main File, this Documentation, and Screenshots of each page in the template.</p>
+                <div>
+                  <!-- Heading -->
+                  <h4>Getting Started</h4>
+                  <!-- Step -->
+                  <div>
+                    <li id="wordpress-specification">WordPress Specification</li>
+                  </div>
+                  <div>
+                    <li class="ms-3 fw-medium">Plugins Installation</li>
+                    <p>To successfully import the template files into your website, ensure that you first install the required plugins. Follow the steps below to install each necessary plugin:</p>
+                    <h6>Required Plugins:</h6>
+                    <ul>
+                      <li>Template Kit – Import</li>
+                      <li>Elementor Website Builder</li>
+                      <li>Elementor Pro</li>
+                    </ul>
+                  </div>
+                </div>
+              </ol>
               <div id="item-1">
-                <h4>Item 1</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima odit atque asperiores? Labore totam recusandae numquam? Vitae in id impedit asperiores sapiente ipsum aspernatur, at voluptatibus excepturi animi enim
-                  deserunt, nobis cupiditate porro officia. Tenetur, hic delectus. Ipsam at, possimus recusandae fugit sint laboriosam error deleniti amet repudiandae, minima sit? Nemo quasi voluptate ipsum at accusamus necessitatibus
-                  reprehenderit fugit aut saepe repellat nobis vitae voluptatum corrupti, fuga incidunt amet! Quas a soluta reprehenderit eos, dolores reiciendis hic nobis dicta mollitia deleniti odit deserunt dolor culpa fugit vel odio
-                  blanditiis nostrum rerum quo possimus in voluptas? Perspiciatis reprehenderit optio doloribus labore!
-                </p>
+                <h4>How to Import</h4>
               </div>
               <div id="item-1-1">
                 <h5>Item 1-1</h5>
