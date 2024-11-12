@@ -4,211 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Documentation Website</title>
-    <style>
-      /* Color variables */
-      :root {
-        --primary-color: #9f77f7;
-        --secondary-color: #ffffff;
-        --heading-color: #ffffff;
-        --body-text-color: #9a97a3;
-        --border-color: #242329;
-        --main-background-color: #0f0e11;
-        --variant-background-color: #1d1c20;
-      }
-
-      /* Reset and base styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: Inter, sans-serif;
-        color: var(--body-text-color);
-        line-height: 1.6;
-        background-color: var(--main-background-color);
-      }
-
-      /* Layout */
-      .container {
-        display: flex;
-        max-width: 1140px;
-        margin: 0 auto;
-      }
-
-      /* Sidebar styles */
-      .sidebar {
-        flex-grow: 1;
-        padding: 20px;
-        height: 100vh;
-        position: fixed;
-        overflow-y: auto;
-        border-right: 1px solid var(--border-color);
-      }
-
-      .sidebar h2 {
-        color: var(--primary-color);
-        margin-bottom: 20px;
-      }
-
-      .sidebar ul {
-        list-style-type: none;
-      }
-
-      .sidebar li {
-        margin-bottom: 10px;
-      }
-
-      .sidebar a {
-        color: var(--body-text-color);
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .sidebar a:hover,
-      .sidebar a.active {
-        color: var(--secondary-color);
-      }
-
-      /* Content styles */
-      .content {
-        flex-grow: 2;
-        padding: 30px;
-        margin-left: 250px;
-        margin-right: 250px;
-      }
-
-      .content ul {
-        padding-left: 20px;
-        list-style-type: decimal;
-      }
-
-      .content li {
-        color: var(--heading-color);
-        font-weight: 500;
-        font-size: 1rem;
-        margin-bottom: 15px;
-      }
-
-      .content ul li p {
-        color: var(--body-text-color);
-      }
-
-      .container-alphabet {
-        padding-left: 20px;
-      }
-
-      .container-alphabet li {
-        margin-bottom: 0px;
-      }
-
-      .container-alphabet li .p {
-        color: var(--body-text-color);
-        font-weight: 500;
-      }
-
-      .container-alphabet li span {
-        color: var(--heading-color);
-        font-weight: 600;
-      }
-
-      .important {
-        background-color: var(--variant-background-color);
-        padding: 1rem;
-        border-radius: 4px;
-        margin-bottom: 15px;
-      }
-      .important p span {
-        color: var(--heading-color);
-        font-weight: 700;
-      }
-      .important p {
-        margin-bottom: 0;
-        color: var(--body-text-color);
-      }
-
-      h1,
-      h2,
-      h3 {
-        color: var(--heading-color);
-        margin-bottom: 15px;
-      }
-
-      p {
-        margin-bottom: 15px;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-
-      /* Mobile styles */
-      .mobile-header {
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: var(--variant-background-color);
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-      }
-
-      .mobile-header .logo {
-        color: white;
-        font-size: 1.5em;
-      }
-
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-      }
-
-      .hamburger span {
-        width: 20px;
-        height: 2px;
-        background-color: white;
-        margin: 2px 0;
-      }
-
-      /* Responsive styles */
-      @media (max-width: 768px) {
-        .container {
-          flex-direction: column;
-        }
-
-        .sidebar {
-          width: 100%;
-          height: auto;
-          position: fixed;
-          top: 60px;
-          left: -100%;
-          transition: left 0.3s ease;
-          background-color: #d6d6d6;
-        }
-
-        .content img {
-          width: 100%;
-        }
-
-        .sidebar.active {
-          left: 0;
-        }
-
-        .content {
-          margin: 60px 0px 30px 0px;
-        }
-
-        .mobile-header {
-          display: flex;
-        }
-
-        .hamburger {
-          display: flex;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./css/deverust-utilities.css">
   </head>
   <body>
     <!-- Mobile header -->
@@ -224,10 +20,10 @@
     <div class="container">
       <!-- Sidebar -->
       <aside class="sidebar">
-        <h2>Documentation</h2>
+        <h2>Fazanash</h2>
         <ul>
           <li><a href="#section1" class="active">Welcome</a></li>
-          <li><a href="#section2">How to Import</a></li>
+          <li><a href="#section2">Import the template kit</a></li>
           <li><a href="#section3">Customizing Font & Color</a></li>
         </ul>
       </aside>
@@ -235,46 +31,116 @@
       <!-- Main content -->
       <main class="content">
         <section id="section1">
-          <h1>Welcome</h1>
+          <h1>Welcome 👋</h1>
           <p>
-            We're excited to have you join the Furnice family! Your purchase means a lot to us, and we can't wait to see how you use it to create stunning websites. To help you get started, we've included a step by step how can you import
-            your template into your existing website, that might be helpful.
+            This guide will help you set up WordPress and launch your newly purchased Elementor-based website template from TemplateMonster. Follow these steps to get your site running quickly and efficiently.
           </p>
+          <p>Before uploading the template kit file, we will first install and configure WordPress. If you have already installed and configured WordPress, you can proceed directly to importing the template you have purchased by follow this step <span><a href="#section2"><strong>Let’s import your template kit</strong></a></span>.</p>
           <div class="important">
             <p><span>Important!</span> Elementor recommends backing up your site before importing a kit file.</p>
           </div>
         </section>
+
+        <section class="py-6">
+          <h2>WordPress Specification</h2>
+          <div>
+            <h3>Requirements:</h3>
+            <ul class="disc-style">
+              <li>A <a href="https://wordpress.org/download/" target="_blank"><strong>WordPress.org</strong></a> installation (self-hosted)</li>
+              <li>Elementor Plugin (free or Pro version)</li>
+            </ul>
+          </div>
+          <div>
+            <div class="pt-6">
+              <h3>Steps to Configure:</h3>
+              <ul>
+                <li><strong>Install WordPress:</strong> Download from WordPress.org and follow their installation guide</li>
+                <li><strong>Install Elementor:</strong> From your WordPress dashboard, go to “Plugins” > “Add New” > search for Elementor, and install it</li>
+                <li><strong>Activate Theme/Template:</strong> Go to “Appearance” > “Themes” to upload and activate your purchased template</li>
+              </ul>
+            </div>
+            <div class="pt-6">
+              <p>For more detailed support, feel free to explore this handy links for WordPress resources:</p>
+              <ul>
+                <li>
+                  <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank"><strong>WordPress Codex</strong></a>.
+
+                  This comprehensive resource offers general information about WordPress and guides you through the installation process on your server.
+                </li>
+                <li>
+                  <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank"><strong>First Steps With WordPress</strong></a>.
+
+                  Explore various topics related to WordPress to kickstart your journey with this platform.
+                </li>
+                <li>
+                  <a href="https://wordpress.org/support/article/first-steps-with-wordpress/" target="_blank"><strong>FAQ New To WordPress</strong></a>.
+
+                  Find answers to the most frequently asked questions by WordPress beginners.
+                </li>
+                <li>
+                  <a href="https://firstsiteguide.com/learn-wordpress/" target="_blank"><strong>First Site Guide</strong></a>.
+
+                  Access easy-to-follow, step-by-step guides and valuable tips to help you establish your online presence and achieve success.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <section id="section2">
-          <h2>How to Import</h2>
+          <h2>Import the template kit</h2>
           <ul>
+            <!-- Step 1 -->
             <li>
-              <span>Extract Package</span>
+              <strong>Extract Package</strong>
               <p>Once you extract the purchased package, you'll find three files: the Main File, this Documentation, and Screenshots of each page in the template.</p>
             </li>
-            <li>Go to your WP Admin</li>
-            <div>
-              <img src="./Assets/docs-template-kit-fazanash-wW8Td.webp" alt="Tools" width="600" />
-              <li>Select Elementor > Tools</li>
-            </div>
-            <div>
-              <img src="./Assets/docs-template-kit-fazanash-oNvLl.webp" alt="Export/Import Kit" width="600" />
-              <li>In the right panel, click the Import/Export Kit tab</li>
-            </div>
-            <div>
-              <img src="./Assets/start-export.webp" alt="Start Export" width="600" />
-              <li>Click Start Import</li>
-            </div>
-            <div>
-              <img src="./Assets/upload-file.webp" alt="Upload File" width="600" />
-              <li>
-                Drag and drop the exported zip file into the window or click Select File and navigate to the zip file. You may receive a warning about importing zip files. If you created the zip file or trust the source of the zip file,
-                continue with the import.
-              </li>
-            </div>
-            <li>Click Next</li>
+
+            <!-- Step 2 -->
             <li>
-              Select which parts of the kit you want to import
-              <div class="container-alphabet">
+              <strong>Go to your WP Admin and Select Elementor > Tools</strong>
+              <div class="mt-3">
+                <img src="./Assets/docs-template-kit-fazanash-wW8Td.webp" alt="Tools" width="600" />
+              </div>
+            </li>
+
+            <!-- Step 3 -->
+            <li>
+              <strong>In the right panel, click the Import/Export Kit tab</strong>
+              <div class="mt-3">
+                <img src="./Assets/start-export.webp" alt="Start Export" width="600" />
+              </div>
+            </li>
+
+            <!-- Step 4 -->
+            <li>
+              <strong>Click Start Import</strong>
+              <div class="mt-3">
+                <img src="./Assets/docs-template-kit-fazanash-oNvLl.webp" alt="Export/Import Kit" width="600" />
+            </div>
+            </li>
+
+            <!-- Step 5 -->
+            <li>
+              <strong>Drag and drop the exported zip file into the window or click Select File and navigate to the zip file. You may receive a warning about importing zip files. If you created the zip file or trust the source of the zip file,
+                continue with the import.</strong>
+              <div class="mt-3">
+                <img src="./Assets/upload-file.webp" alt="Upload File" width="600" />
+              </div>
+            </li>
+
+            <!-- Step 6 -->
+            <li>
+              <strong>Click Next</strong>
+              <div class="mt-3">
+                <img src="./Assets/select-plugin.webp" alt="Select Plugins" width="600" />
+              </div>
+            </li>
+
+            <!-- Step 7 -->
+            <li>
+              <strong>Select which parts of the kit you want to import</strong>
+              <div class="container-alphabet mt-3">
                 <ol type="a">
                   <li>
                     <span>Templates:</span>
@@ -289,43 +155,40 @@
                     <span class="p">Import the global fonts, theme style, layout, lightbox, and background settings. Only select this if you want to replicate the look and feel of the site.</span>
                   </li>
                 </ol>
-                <div class="important">Tip: If you want to import the entire site as is, select all three.</div>
+                <div class="important"><strong>Tip</strong>: If you want to import the entire site as is, select all three.</div>
               </div>
             </li>
-            <div>
-              <img src="./Assets/select-plugin.webp" alt="Select Plugins" width="600" />
-              <li>
-                <span>Click Import</span>
-                <p>You may receive a warning that the kit contains SVG files. If you created the export kit or trust the source of the export kit, Enable SVG imports.</p>
-              </li>
-            </div>
-            <li>Click Close to end the import process</li>
+
+            <!-- Step 8 -->
+            <li>
+              <strong>Click Import</strong>
+              <div class="mt-3">
+                <img src="https://elementor.com/help/wp-content/uploads/2024/02/image-72.png" alt="Select Plugins" width="600" />
+              </div>
+              <div class="important">
+                You may receive a warning that the <strong>kit contains SVG files</strong>. If you created the export kit or trust the source of the export kit, <strong>Enable SVG imports</strong>.
+              </div>
+            </li>
+
+            <!-- Step 9 -->
+            <li>
+              <strong>Click Close to end the import process.</strong>
+              <div class="mt-3">
+                <img src="https://elementor.com/help/wp-content/uploads/2024/02/image-73.png" alt="Select Plugins" width="600" />
+              </div>
+            </li>
           </ul>
+          <p><strong>Congratulations on Importing Your Elementor Template</strong>👏. Great job! You've imported your Elementor template to WordPress. To customize, follow the instructions below. Explore Elementor's features to make your site unique. Enjoy building!</p>
         </section>
+
         <section id="section3">
           <h2>Customize the Font and Color</h2>
-          <img src="./Assets/edit-with-elementor.webp" alt="Edit With Elementor" width="600" />
           <ul>
-            <div>
-              <li>Open one of the Imported page with Edit with Elementor option</li>
-            </div>
-            <div>
-              <img src="./Assets/site-setting.webp" alt="Site Setting" width="600" />
-              <li>Navigate to the upper left of the panel and select Site Settings</li>
-            </div>
-            <div>
-              <img src="./Assets/customization.webp" alt="Customization" width="600" />
-              <li>Choose what do you want to customize, the Global Colors or Global Fonts</li>
-            </div>
-            <div>
-              <img src="./Assets/color-setting.webp" alt="Color Setting" width="600" />
-              <img src="./Assets/font-setting.webp" alt="Font Setting" width="600" />
-              <li>After that, change the color or font according to your style</li>
-            </div>
-            <div>
-              <img src="./Assets/save-changes.webp" alt="Save Changes" width="600" />
-              <li>Don’t forget to save your settings with click the Save Changes button in the bottom left</li>
-            </div>
+            <li>Open one of the Imported page with Edit with Elementor option</li>
+            <li>Navigate to the upper left of the panel and select Site Settings</li>
+            <li>Choose what do you want to customize, the Global Colors or Global Fonts</li>
+            <li>After that, change the color or font according to your style</li>
+            <li>Don’t forget to save your settings with click the Save Changes button in the bottom left</li>
           </ul>
         </section>
       </main>
