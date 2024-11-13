@@ -9,7 +9,11 @@
   <body>
     <!-- Mobile header -->
     <header class="mobile-header">
-      <div class="logo">Documentation</div>
+      <div class="logo">
+        <a href="#section1">
+          <img src="./Assets/fazanash-logo-docs.png" alt="Fazanash Documentation"  height="20" />
+        </a>
+      </div>
       <div class="hamburger">
         <span></span>
         <span></span>
@@ -20,7 +24,12 @@
     <div class="container">
       <!-- Sidebar -->
       <aside class="sidebar">
-        <h2>Fazanash</h2>
+        <div class="logo">
+          <a href="#section1">
+            <img src="./Assets/fazanash-logo-docs.png" alt="Fazanash Documentation" />
+          </a>
+        </div>
+        <h3>Menu</h3>
         <ul>
           <li><a href="#section1" class="active">Welcome</a></li>
           <li><a href="#section2">Import the template kit</a></li>
@@ -200,6 +209,8 @@
       const sidebar = document.querySelector(".sidebar");
       const content = document.querySelector(".content");
       const menuItems = document.querySelectorAll(".sidebar a");
+      const titleOfSidebar = document.querySelector("aside.sidebar h2");
+
 
       // Toggle sidebar on hamburger click
       hamburger.addEventListener("click", () => {
@@ -212,6 +223,17 @@
           sidebar.classList.remove("active");
         }
       });
+
+      // Hide title of sidebar if
+      function hideH2InSidebar() {
+        if (window.innerWidth <= 768) {
+          titleOfSidebar.style.display = "none";
+        } else {
+          titleOfSidebar.style.display = "block";
+        }
+      }
+
+      window.addEventListener("resize", hideH2InSidebar);
 
       // Handle menu item clicks
       menuItems.forEach((item) => {
