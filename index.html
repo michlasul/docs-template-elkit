@@ -10,9 +10,7 @@
     <!-- Mobile header -->
     <header class="mobile-header">
       <div class="logo">
-        <a href="#section1">
-          <img src="./Assets/fazanash-logo-docs.png" alt="Fazanash Documentation"  height="20" />
-        </a>
+        <h3>Fazanash</h3>
       </div>
       <div class="hamburger">
         <span></span>
@@ -24,17 +22,17 @@
     <div class="container">
       <!-- Sidebar -->
       <aside class="sidebar">
-        <div class="logo">
-          <a href="#section1">
-            <img src="./Assets/fazanash-logo-docs.png" alt="Fazanash Documentation" />
-          </a>
+        <div class="innerSidebar">
+          <div class="logo">
+            <h2>Documentation</h2>
+          </div>
+          <h5>Menu</h5>
+          <ul>
+            <li><a href="#section1" class="active">Welcome</a></li>
+            <li><a href="#section2">Import the template kit</a></li>
+            <li><a href="#section3">Customizing Font & Color</a></li>
+          </ul>
         </div>
-        <h3>Menu</h3>
-        <ul>
-          <li><a href="#section1" class="active">Welcome</a></li>
-          <li><a href="#section2">Import the template kit</a></li>
-          <li><a href="#section3">Customizing Font & Color</a></li>
-        </ul>
       </aside>
 
       <!-- Main content -->
@@ -109,7 +107,7 @@
             <li>
               <strong>Go to your WP Admin and Select Elementor > Tools</strong>
               <div class="mt-3">
-                <img src="./Assets/docs-template-kit-fazanash-wW8Td.webp" alt="Tools" width="600" />
+                <img src="./Assets/docs-template-kit-fazanash-wW8Td.webp" alt="Tools"  />
               </div>
             </li>
 
@@ -117,7 +115,7 @@
             <li>
               <strong>In the right panel, click the Import/Export Kit tab</strong>
               <div class="mt-3">
-                <img src="./Assets/start-export.webp" alt="Start Export" width="600" />
+                <img src="./Assets/start-export.webp" alt="Start Export"  />
               </div>
             </li>
 
@@ -125,7 +123,7 @@
             <li>
               <strong>Click Start Import</strong>
               <div class="mt-3">
-                <img src="./Assets/docs-template-kit-fazanash-oNvLl.webp" alt="Export/Import Kit" width="600" />
+                <img src="./Assets/docs-template-kit-fazanash-oNvLl.webp" alt="Export/Import Kit"  />
             </div>
             </li>
 
@@ -134,7 +132,7 @@
               <strong>Drag and drop the exported zip file into the window or click Select File and navigate to the zip file. You may receive a warning about importing zip files. If you created the zip file or trust the source of the zip file,
                 continue with the import.</strong>
               <div class="mt-3">
-                <img src="./Assets/upload-file.webp" alt="Upload File" width="600" />
+                <img src="./Assets/upload-file.webp" alt="Upload File"  />
               </div>
             </li>
 
@@ -142,7 +140,7 @@
             <li>
               <strong>Click Next</strong>
               <div class="mt-3">
-                <img src="./Assets/select-plugin.webp" alt="Select Plugins" width="600" />
+                <img src="./Assets/select-plugin.webp" alt="Select Plugins"  />
               </div>
             </li>
 
@@ -172,7 +170,7 @@
             <li>
               <strong>Click Import</strong>
               <div class="mt-3">
-                <img src="https://elementor.com/help/wp-content/uploads/2024/02/image-72.png" alt="Select Plugins" width="600" />
+                <img src="https://elementor.com/help/wp-content/uploads/2024/02/image-72.png" alt="Select Plugins"  />
               </div>
               <div class="important">
                 You may receive a warning that the <strong>kit contains SVG files</strong>. If you created the export kit or trust the source of the export kit, <strong>Enable SVG imports</strong>.
@@ -183,7 +181,7 @@
             <li>
               <strong>Click Close to end the import process.</strong>
               <div class="mt-3">
-                <img src="https://elementor.com/help/wp-content/uploads/2024/02/image-73.png" alt="Select Plugins" width="600" />
+                <img src="https://elementor.com/help/wp-content/uploads/2024/02/image-73.png" alt="Select Plugins"  />
               </div>
             </li>
           </ul>
@@ -209,27 +207,36 @@
       const sidebar = document.querySelector(".sidebar");
       const content = document.querySelector(".content");
       const menuItems = document.querySelectorAll(".sidebar a");
-      const titleOfSidebar = document.querySelector("aside.sidebar h2");
+      const logo = document.querySelector("aside.sidebar .logo");
+      // const heightOfHeader = document.querySelector(".mobile-header");
 
 
       // Toggle sidebar on hamburger click
       hamburger.addEventListener("click", () => {
         sidebar.classList.toggle("active");
+        // if (sidebar.classList.contains("active")) {
+        //   sidebar.style.top = `${heightOfHeader}px`;
+        // } else {
+        //   sidebar.removeAttribute("style");
+        // }
       });
 
       // Close sidebar when clicking outside
       content.addEventListener("click", () => {
         if (sidebar.classList.contains("active")) {
           sidebar.classList.remove("active");
-        }
+        } // else {
+        //   sidebar.removeAttribute("style");
+        // }
       });
 
-      // Hide title of sidebar if
+      // Hide title of sidebar
       function hideH2InSidebar() {
         if (window.innerWidth <= 768) {
-          titleOfSidebar.style.display = "none";
+          logo.style.display = "none";
         } else {
-          titleOfSidebar.style.display = "block";
+          logo.style.display = "block";
+          // sidebar.classList.remove("active");
         }
       }
 

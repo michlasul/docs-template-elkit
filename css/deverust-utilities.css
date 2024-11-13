@@ -27,6 +27,7 @@
   --fs-h1: 2.25rem;
   --fs-h2: 1.5rem;
   --fs-h3: 1.125rem;
+  --fs-h5: 0.875rem;
   --fs-base: 1rem;
   --fs-sm: 0.875rem;
   --fs-xs: 0.75rem;
@@ -78,6 +79,10 @@ body {
   margin: 0 auto;
 }
 
+img {
+  width: 100%;
+}
+
 /* Padding & Margin */
 .pt-6 {
   padding-top: var(--space-6);
@@ -88,21 +93,25 @@ body {
 }
 
 .mt-3 {
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
 }
 
 /* Sidebar styles */
 .sidebar {
-  flex-grow: 1;
-  padding: 20px;
-  height: 100vh;
-  position: fixed;
-  overflow-y: auto;
+  padding: 30px;
+  height: auto;
   border-right: 1px solid var(--border-color);
+  position: relative;
 }
 
-.sidebar .logo a img {
-  max-width: 150px;
+.innerSidebar {
+  position: sticky;
+  top: 30px;
+  left: 0;
+}
+
+header .logo h3 {
+  margin-bottom: 0;
 }
 
 .sidebar .logo {
@@ -114,38 +123,40 @@ body {
   margin-bottom: 20px;
 }
 
-.sidebar h3 {
-  font-size: var(--fs-xs);
-  font-weight: 500;
-  text-transform: uppercase;
-  color: var(--primary-color);
-}
-
 .sidebar ul {
   list-style-type: none;
+  border-left: 1px solid var(--border-color);
 }
 
-.sidebar li {
-  margin-bottom: 10px;
+.sidebar ul li {
+  margin-bottom: 4px;
+  margin-left: -1px;
 }
 
-.sidebar a {
+.sidebar ul li a {
   color: var(--body-text-color);
+  font-size: var(--fs-sm);
   text-decoration: none;
   transition: color 0.3s ease;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--border-color);
 }
 
-.sidebar a:hover,
-.sidebar a.active {
+.sidebar ul li a:hover {
   color: var(--secondary-color);
+  border-left-color: var(--secondary-color);
+}
+.sidebar ul li a.active {
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
 }
 
 /* Content styles */
 .content {
-  flex-grow: 2;
-  padding: 30px;
-  margin-left: 250px;
-  margin-right: 250px;
+  padding: 30px ;
+  margin-right: 200px;
 }
 
 .content ul {
@@ -173,7 +184,7 @@ body {
 }
 
 .container-alphabet li {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .container-alphabet li .p {
@@ -204,7 +215,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h5 {
   color: var(--heading-color);
   margin-bottom: var(--space-3);
   text-transform: capitalize;
@@ -218,6 +230,9 @@ h2 {
 }
 h3 {
   font-size: var(--fs-h3);
+}
+h5 {
+  font-size: var(--fs-h5);
 }
 
 p {
@@ -252,7 +267,7 @@ strong {
   background-color: var(--variant-background-color);
   position: fixed;
   width: 100%;
-  height: 60px;
+  height: 10vh;
   top: 0;
   z-index: 1000;
 }
@@ -290,14 +305,15 @@ strong {
     left: 0;
     transition: top 0.3s ease;
     background-color: var(--variant-background-color);
+    border-top: 1px solid var(--border-color);
+  }
+
+  .sidebar.active {
+    top: 10vh;
   }
 
   .content img {
     width: 100%;
-  }
-
-  .sidebar.active {
-    top: 60px;
   }
 
   .content {
