@@ -37,7 +37,7 @@
   --primary-color: #F8BD3C;
   --secondary-color: #ffffff;
   --heading-color: #ffffff;
-  --body-text-color: #9a97a3;
+  --body-text-color: #d7d7dd;
   --border-color: #242329;
   --main-background-color: #0f0e11;
   --variant-background-color: #1d1c20;
@@ -167,6 +167,10 @@ img {
 
 .innerContent {
   width: 700px;
+}
+
+#section1, #section2, #section3, #section4 {
+  padding: 24px 0;
 }
 
 .content ul {
