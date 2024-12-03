@@ -10,10 +10,9 @@
     <!-- Mobile header -->
     <header class="mobile-header">
       <div class="logo">
-        <h3>Fazanash</h3>
+        <h3>Furnice</h3>
       </div>
       <div class="hamburger">
-        <span></span>
         <span></span>
         <span></span>
       </div>
@@ -24,7 +23,7 @@
       <aside class="sidebar">
         <div class="innerSidebar">
           <div class="logo">
-            <h2>Documentation</h2>
+            <h2>Furnice</h2>
           </div>
           <h5>Menu</h5>
           <ul>
@@ -204,6 +203,7 @@
     <script>
       // Get DOM elements
       const hamburger = document.querySelector(".hamburger");
+
       const sidebar = document.querySelector(".sidebar");
       const content = document.querySelector(".content");
       const menuItems = document.querySelectorAll(".sidebar a");
@@ -211,23 +211,18 @@
       // const heightOfHeader = document.querySelector(".mobile-header");
 
 
+
       // Toggle sidebar on hamburger click
       hamburger.addEventListener("click", () => {
         sidebar.classList.toggle("active");
-        // if (sidebar.classList.contains("active")) {
-        //   sidebar.style.top = `${heightOfHeader}px`;
-        // } else {
-        //   sidebar.removeAttribute("style");
-        // }
+        hideH2InSidebar();
       });
 
       // Close sidebar when clicking outside
       content.addEventListener("click", () => {
         if (sidebar.classList.contains("active")) {
           sidebar.classList.remove("active");
-        } // else {
-        //   sidebar.removeAttribute("style");
-        // }
+        }
       });
 
       // Hide title of sidebar

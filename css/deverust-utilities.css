@@ -101,7 +101,8 @@ img {
   padding: 30px;
   height: auto;
   border-right: 1px solid var(--border-color);
-  position: relative;
+  width: 15%;
+  flex-grow: 1;
 }
 
 .innerSidebar {
@@ -157,6 +158,8 @@ header .logo h3 {
 .content {
   padding: 30px ;
   margin-right: 200px;
+  width: 50%;
+  flex-grow: 1;
 }
 
 .content ul {
@@ -282,13 +285,15 @@ strong {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  height: 10px;
+  width: 20px;
+  justify-content: space-between;
 }
 
 .hamburger span {
-  width: 20px;
-  height: 2px;
+  width: auto;
+  height: 1px;
   background-color: white;
-  margin: 2px 0;
 }
 
 /* Responsive styles */
@@ -318,6 +323,7 @@ strong {
 
   .content {
     margin: 60px 0 30px 0;
+    width: 100%;
   }
 
   .mobile-header {
