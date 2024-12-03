@@ -43,22 +43,6 @@
   --variant-background-color: #1d1c20;
 }
 
-/*
-
-  h1 {
-    font-size: var(--fs-h1);
-  }
-
-  .ddt-ps-space-8 {
-    padding-left: var(--fs-h1);
-  }
-
-  p {
-    margin-bottom: var(--space-6);
-  }
-
-*/
-
 /* Reset and base styles */
 * {
   margin: 0;
@@ -67,7 +51,8 @@
 }
 
 body {
-  font-family: Inter, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
   color: var(--body-text-color);
   line-height: 1.6;
   background-color: var(--main-background-color);
@@ -346,7 +331,7 @@ strong {
   }
 
   .sidebar.active {
-    top: 10vh;
+    top: 61px;
   }
 
   .content img {
