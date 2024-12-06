@@ -69,7 +69,6 @@ body {
 .container {
   display: flex;
   margin: 0 auto;
-  padding-top: 64px;
   width: 100%;
   max-width: 1440px;
 }
@@ -93,21 +92,21 @@ img {
 
 /* Sidebar styles */
 .sidebar {
-  padding: 30px;
+  padding: 56px 30px;
   height: auto;
   border-right: 1px solid var(--border-color);
-  width: 300px;
+  width: 280px;
 }
 
 .innerSidebar {
   position: sticky;
-  top: 100px;
+  top: 56px;
   left: 0;
-  padding: 24px 0;
 }
 
 .sidebar .logo {
-  margin-bottom: var(--space-4);
+  width: 70%;
+  margin-bottom: 36px;
 }
 
 .sidebar ul {
@@ -149,7 +148,7 @@ img {
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 24px 30px;
 }
 
 .innerContent {
@@ -287,6 +286,7 @@ strong {
 
 /* Mobile styles */
 .mobile-header {
+  display: none;
   padding: 0 20px;
   background-color: var(--variant-background-color);
   position: fixed;
@@ -297,7 +297,6 @@ strong {
 }
 
 .mobile-header .wrapper {
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
@@ -361,7 +360,7 @@ strong {
     transition: top 0.3s ease;
     background-color: var(--variant-background-color);
     border-top: 1px solid var(--border-color);
-    padding: 0 20px 10px 20px;
+    padding: 30px 20px;
   }
 
   .sidebar.active {
@@ -384,6 +383,10 @@ strong {
 
   .innerContent #section1 .title h1 {
     margin-bottom: 4px;
+  }
+
+  .mobile-header {
+    display: block;
   }
 
   .mobile-header .wrapper {
