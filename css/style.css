@@ -34,15 +34,15 @@
 
   /* Colors */
   /*--primary-color: #9f77f7;*/
-  --primary-color: #E79B3E;
+  --primary-color: #ffba00;
   --secondary-color: #ffffff;
-  --heading-color: #ffffff;
+  --heading-color: #f5f5f6;
   --text-light: #d7d7dd;
-  --text-dark: #1D1C1A;
+  --text-dark: #1d1c1a;
   --text-white: #ffffff;
   --border-color: #242329;
-  --main-background-color: #0f0e11;
-  --variant-background-color: #1d1c20;
+  --main-background-color: #101011;
+  --variant-background-color: #18181a;
   --importance-background: var(--variant-background-color);
 }
 
@@ -61,7 +61,7 @@ body {
   background-color: var(--main-background-color);
 }
 
-/* Layout */
+/* Start Layout */
 .main-content {
   padding: 0 20px;
   width: 100%;
@@ -76,6 +76,59 @@ body {
 img {
   width: 100%;
 }
+
+.page-banner {
+  padding: var(--space-8);
+}
+
+.relative-overlay {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #0000004d;
+  z-index: 0;
+  border-radius: 24px;
+}
+
+.page-banner-container {
+  width: 100%;
+  padding: var(--space-10);
+  /* background-color: var(--variant-background-color); */
+  background-image: url(../Assets/shooting-and-weapons-training-outdoor-shooting-ra-ZS52MJQ.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 350px;
+  border-radius: 24px;
+  display: flex;
+  align-items: end;
+}
+
+.pb-content-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  z-index: 1;
+}
+
+.pb-content-container h1 {
+  margin-bottom: 0px;
+  color: var(--heading-color);
+}
+
+.pb-content-container p {
+  font-size: 1.4rem;
+  color: var(--text-light);
+}
+
+/*  End Layout */
 
 /* Padding & Margin */
 .pt-6 {
@@ -166,7 +219,10 @@ img {
   font-weight: 400;
 }
 
-#section1, #section2, #section3, #section4 {
+#section1,
+#section2,
+#section3,
+#section4 {
   padding: 24px 0;
 }
 
@@ -217,6 +273,7 @@ img {
   padding: 1rem;
   margin: 24px 0;
   color: var(--text-light);
+  border-radius: 8px;
 }
 .important strong {
   font-weight: 700;
@@ -338,6 +395,10 @@ strong {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .page-banner {
+    display: none;
+  }
+
   .container {
     padding: 80px 0;
     flex-direction: column;
@@ -390,7 +451,6 @@ strong {
     display: flex;
     justify-content: space-between;
   }
-
 
   .hamburger {
     display: flex;
