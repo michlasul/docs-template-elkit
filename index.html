@@ -62,6 +62,7 @@
               </li>
               <li><a href="#section3">Import the template kit</a></li>
               <li><a href="#section4">Customizing Font & Color</a></li>
+              <li><a href="#section5">Make a New Post with Elementor</a></li>
             </ul>
           </div>
         </aside>
@@ -233,7 +234,10 @@
                     with the import.</strong
                   >
                   <div class="mt-3">
-                    <img src="./Assets/upload-file.webp" alt="Upload File" />
+                    <img
+                      src="./Assets/upload-file-free.webp"
+                      alt="Upload File"
+                    />
                   </div>
                 </li>
 
@@ -242,7 +246,7 @@
                   <strong>Click Next</strong>
                   <div class="mt-3">
                     <img
-                      src="./Assets/select-plugin.webp"
+                      src="./Assets/select-plugin-free.webp"
                       alt="Select Plugins"
                     />
                   </div>
@@ -293,8 +297,8 @@
                   <strong>Click Import</strong>
                   <div class="mt-3">
                     <img
-                      src="https://elementor.com/help/wp-content/uploads/2024/02/image-72.png"
-                      alt="Select Plugins"
+                      src="/Assets/select-parts-free.webp"
+                      alt="Select Which Part You Want to Apply"
                     />
                   </div>
                   <div class="important">
@@ -309,10 +313,7 @@
                 <li>
                   <strong>Click Close to end the import process.</strong>
                   <div class="mt-3">
-                    <img
-                      src="https://elementor.com/help/wp-content/uploads/2024/02/image-73.png"
-                      alt="Select Plugins"
-                    />
+                    <img src="/Assets/end-proccess.webp" alt="End Proccess" />
                   </div>
                 </li>
               </ul>
@@ -325,6 +326,7 @@
               </p>
             </section>
 
+            <!-- Customize fonts and colors -->
             <section id="section4">
               <h2>Customize the Font and Color</h2>
               <ul>
@@ -345,6 +347,86 @@
                 <li>
                   Don’t forget to save your settings with click the Save Changes
                   button in the bottom left
+                </li>
+              </ul>
+            </section>
+
+            <!-- Make a New Post with Elementor -->
+            <section id="section5">
+              <h2>Make a New Post with Elementor</h2>
+              <p>
+                This template leverages dynamic content for blog posts and comes
+                with pre-designed layouts. Here's how to create a new post using
+                Elementor and apply a template.
+              </p>
+              <ul>
+                <li>
+                  From your WordPress Dashboard, go to "Posts" > "Add New".
+                </li>
+                <li>Enter a title for your new post.</li>
+                <li>
+                  Click the "Edit with Elementor" button. This will open the
+                  Elementor editor.
+                </li>
+                <li>
+                  Import a Pre-designed Template:
+                  <ol type="a" class="ps-3 pt-3">
+                    <li>
+                      Once in the Elementor editor, click the folder icon (Add
+                      Template) in the central area of the canvas.
+                    </li>
+                    <li>
+                      A library of templates will appear. Navigate to the "My
+                      Templates" tab to see templates imported with your kit.
+                    </li>
+                    <li>
+                      Look for a template named "Single Post." Hover over it and
+                      click "Insert".
+                    </li>
+                    <li>Confirm the import when prompted.</li>
+                  </ol>
+                </li>
+                <li>
+                  Customize Content: After the template is inserted, you can now
+                  easily change the text, images, and other elements within the
+                  layout to fit your new post's content. Remember to click the
+                  "Update" or "Publish" button in the Elementor editor to save
+                  your changes!
+                </li>
+                <li>
+                  Set Categories and Tags:
+                  <ol type="a" class="ps-3 pt-3">
+                    <li>
+                      Exit the Elementor editor by clicking the hamburger menu
+                      (three horizontal lines) in the top left, then select
+                      "Exit to Dashboard" or "View Page" (then navigate back to
+                      the WordPress editor).
+                    </li>
+                    <li>
+                      In the standard WordPress post editor (Gutenberg or
+                      Classic editor), locate the "Categories" and "Tags" meta
+                      boxes on the right sidebar. Select or add the relevant
+                      categories and tags for your post.
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  Set a Featured Image:
+                  <ol type="a" class="ps-3 pt-3">
+                    <li>
+                      In the standard WordPress post editor, locate the
+                      "Featured Image" meta box on the right sidebar.
+                    </li>
+                    <li>
+                      Click "Set featured image" to upload a new image or select
+                      an existing one from your media library. This image will
+                      be dynamically displayed on your single post pages.
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  Once you're done editing, click "Publish" or "Update" to save
+                  your post.
                 </li>
               </ul>
             </section>
@@ -412,6 +494,47 @@
             behavior: "smooth",
           });
         });
+      });
+
+      // scrollspy
+      document.addEventListener("DOMContentLoaded", () => {
+        // 1. Pilih semua link di dalam sidebar Anda
+        //    Selector ini disesuaikan dengan struktur: <aside class="sidebar"> -> <ul> -> <li> -> <a>
+        const navLinks = document.querySelectorAll(".sidebar ul a");
+
+        // 2. Pilih semua elemen section yang memiliki ID
+        //    Ini mengasumsikan konten Anda dibagi menjadi <section id="section2">, <section id="section3">, dst.
+        const sections = document.querySelectorAll("section[id]");
+
+        // Fungsi yang akan dijalankan setiap kali pengguna melakukan scroll
+        const onScroll = () => {
+          let currentSectionId = "";
+
+          // Tentukan section mana yang sedang terlihat di layar
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            // Diberi 'offset' 100px agar tautan aktif sedikit lebih awal, terasa lebih responsif
+            if (window.scrollY >= sectionTop - 100) {
+              currentSectionId = section.getAttribute("id");
+            }
+          });
+
+          // Terapkan atau hapus kelas 'active' pada tautan navigasi
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+
+            // Mencocokkan href tautan (misal: "#section2") dengan ID section yang sedang aktif
+            if (link.getAttribute("href") === `#${currentSectionId}`) {
+              link.classList.add("active");
+            }
+          });
+        };
+
+        // Tambahkan event listener untuk mendeteksi scroll
+        window.addEventListener("scroll", onScroll);
+
+        // Panggil fungsi sekali saat halaman dimuat untuk mengaktifkan tautan yang sesuai
+        onScroll();
       });
     </script>
   </body>

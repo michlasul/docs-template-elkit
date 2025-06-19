@@ -139,6 +139,14 @@ img {
   padding-bottom: var(--space-6);
 }
 
+.pt-3 {
+  padding-top: var(--space-3);
+}
+
+.ps-3 {
+  padding-left: var(--space-6);
+}
+
 .mt-3 {
   margin-top: var(--space-4);
 }
@@ -148,7 +156,8 @@ img {
   padding: 56px 30px;
   height: auto;
   border-right: 1px solid var(--border-color);
-  width: 280px;
+  width: fit-content;
+  max-width: 300px;
 }
 
 .innerSidebar {
@@ -222,7 +231,8 @@ img {
 #section1,
 #section2,
 #section3,
-#section4 {
+#section4,
+#section5 {
   padding: 24px 0;
 }
 
